@@ -6,7 +6,7 @@ def jogar():
     print("*******************************")
 
     numeroSecreto = random.randrange(1, 101)
-    print('hey -> {} sshhhh ;)'.format(numeroSecreto))
+    #print('hey -> {} sshhhh ;)'.format(numeroSecreto))
 
     tentativas = 0
     pts = 1000
@@ -29,7 +29,7 @@ def jogar():
         strChute = input("digite o seu número entre 1 e 100: ")
         chute = int(strChute)
 
-        if(chute < 1 | chute > 100):
+        if chute < 1 | chute > 100:
             print("você deveria respeitar os limites do número")
             pts -= 10
             continue
@@ -43,12 +43,12 @@ def jogar():
             break
         else:
             pts -= abs(numeroSecreto - chute)
-            if(maior):
+            if maior:
                 print("Errou. vc chutou ACIMA")
-            elif(menor):
+            elif menor:
                 print("Errou. vc chutou ABAIXO")
 
-        if(rodada == tentativas):
+        if rodada == tentativas:
             print("Fim das tentativas O número secreto era {}. Sua pontuação final é {}".format(numeroSecreto, pts))
 
     print("\nFim do Jogo!")
