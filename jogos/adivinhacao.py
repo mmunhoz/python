@@ -6,23 +6,23 @@ def jogar():
     print("*******************************")
 
     numeroSecreto = random.randrange(1, 101)
-    #print('hey -> {} sshhhh ;)'.format(numeroSecreto))
+    # print('hey -> {} sshhhh ;)'.format(numeroSecreto))
 
     tentativas = 0
     pts = 1000
     print("Selecione o nível de dificuldade (1(fácil), 2(médio) ou 3(difícil)")
     nivel = int(input('Nível: '))
 
-    if(nivel == 1):
+    if (nivel == 1):
         tentativas = 20
-    elif(nivel == 2):
+    elif (nivel == 2):
         tentativas = 10
-    elif(nivel == 3):
+    elif (nivel == 3):
         tentativas = 5
     else:
         print("nível inválido")
 
-    rodada =1
+    rodada = 1
 
     for rodada in range(1, tentativas + 1):
         print("Tentativa {} de  {}".format(rodada, tentativas))
@@ -38,8 +38,8 @@ def jogar():
         maior = chute > numeroSecreto
         menor = chute < numeroSecreto
 
-        if(acertou):
-            print("você acertou! Pontuação final: {}".format(pts))
+        if (acertou):
+            print("Você acertou! Pontuação final: {}".format(pts))
             break
         else:
             pts -= abs(numeroSecreto - chute)
@@ -49,9 +49,10 @@ def jogar():
                 print("Errou. vc chutou ABAIXO")
 
         if rodada == tentativas:
-            print("Fim das tentativas O número secreto era {}. Sua pontuação final é {}".format(numeroSecreto, pts))
+            print("Fim das tentativas. O número secreto era {}. Sua pontuação final é {}".format(numeroSecreto, pts))
 
     print("\nFim do Jogo!")
 
-if(__name__ == "__main__"):
+
+if __name__ == "__main__":
     jogar()
